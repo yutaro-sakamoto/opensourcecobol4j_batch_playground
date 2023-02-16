@@ -16,6 +16,9 @@
     <mybatis:scan           base-package="com.example.batch.job01" factory-ref="jobSqlSessionFactory"/>
 
     <batch:job id="job01" job-repository="jobRepository">
+        <batch:step id="job01.step00" next="job01.step01">
+            <batch:tasklet transaction-manager="jobTransactionManager" ref="cobolTasklet1"/>
+        </batch:step>
         <batch:step id="job01.step01" next="job01.step02">
             <batch:tasklet transaction-manager="jobTransactionManager" ref="simpleJobTasklet"/>
         </batch:step>
