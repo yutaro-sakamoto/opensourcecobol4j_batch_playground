@@ -9,12 +9,12 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SimpleJobTasklet implements Tasklet {
-    private static final Logger logger = LoggerFactory.getLogger(SimpleJobTasklet.class);
+public class SimpleJobTasklet2 implements Tasklet {
+    private static final Logger logger = LoggerFactory.getLogger(SimpleJobTasklet2.class);
 
     @Override
     public RepeatStatus execute(StepContribution conribution, ChunkContext chunkContext) throws Exception {
-        logger.info("called tasklet1.");
+        logger.info("called tasklet2.");
         return RepeatStatus.FINISHED;
     }
 }
