@@ -9,4 +9,7 @@ run:
 cbl:
 	cd src/main/java/com/example/batch/job01 && cobj -C -java-package=com.example.batch.job01 --edit-code-command='bash spring_batch_tasklet.sh' *.cbl
 
+conndb:
+	PGPASSWORD=password psql -h localhost -d testdb -U main_user
+
 .PHONY: run
